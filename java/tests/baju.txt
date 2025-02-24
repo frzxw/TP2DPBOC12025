@@ -1,0 +1,9 @@
+1
+6
+Baju Kucing
+45000
+10
+Baju
+Sutra
+Merah
+M

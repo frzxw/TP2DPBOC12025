@@ -1,0 +1,7 @@
+3
+10
+Makanan Kucing
+90000
+25
+Makanan
+5

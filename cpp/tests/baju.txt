@@ -1,0 +1,10 @@
+1
+6
+Baju Hamster
+35000
+5
+Baju
+Katun
+Hijau
+XS
+

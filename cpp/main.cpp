@@ -1,12 +1,14 @@
-#include <bits/stdc++.h>
-#include "PetShop.cpp"
-#include "Aksesoris.cpp"
-#include "Baju.cpp"
+#include <bits/stdc++.h> // menyertakan semua header standar c++
+#include "PetShop.cpp" // menyertakan file header PetShop
+#include "Aksesoris.cpp" // menyertakan file header Aksesoris
+#include "Baju.cpp" // menyertakan file header Baju
 
-using namespace std;
+using namespace std; // menggunakan namespace standar
 
+// fungsi untuk mencetak tabel produk
 void print_table(const vector<PetShop *> &produk)
 {
+    // inisialisasi panjang maksimum untuk setiap kolom
     int max_id = strlen("ID");
     int max_nama = strlen("Nama Produk");
     int max_harga = strlen("Harga");
@@ -16,30 +18,32 @@ void print_table(const vector<PetShop *> &produk)
     int max_warna = strlen("Warna");
     int max_ukuran = strlen("Ukuran");
 
+    // loop untuk menghitung panjang maksimum setiap kolom
     for (size_t i = 0; i < produk.size(); ++i)
     {
-        PetShop *item = produk[i];
-        max_id = max(max_id, (int)to_string(item->get_id()).length());
-        max_nama = max(max_nama, (int)item->get_nama_produk().length());
-        max_harga = max(max_harga, (int)to_string(item->get_harga_produk()).length());
-        max_stok = max(max_stok, (int)to_string(item->get_stok_produk()).length());
-        max_kategori = max(max_kategori, (int)item->get_kategori_produk().length());
+        PetShop *item = produk[i]; // mengambil item produk
+        max_id = max(max_id, (int)to_string(item->get_id()).length()); // menghitung panjang maksimum id
+        max_nama = max(max_nama, (int)item->get_nama_produk().length()); // menghitung panjang maksimum nama produk
+        max_harga = max(max_harga, (int)to_string(item->get_harga_produk()).length()); // menghitung panjang maksimum harga
+        max_stok = max(max_stok, (int)to_string(item->get_stok_produk()).length()); // menghitung panjang maksimum stok
+        max_kategori = max(max_kategori, (int)item->get_kategori_produk().length()); // menghitung panjang maksimum kategori
 
-        const Aksesoris *aksesoris = dynamic_cast<const Aksesoris *>(item);
-        const Baju *baju = dynamic_cast<const Baju *>(item);
+        const Aksesoris *aksesoris = dynamic_cast<const Aksesoris *>(item); // mencoba cast ke tipe Aksesoris
+        const Baju *baju = dynamic_cast<const Baju *>(item); // mencoba cast ke tipe Baju
 
         if (aksesoris)
         {
-            max_bahan = max(max_bahan, (int)aksesoris->get_bahan().length());
-            max_warna = max(max_warna, (int)aksesoris->get_warna().length());
+            max_bahan = max(max_bahan, (int)aksesoris->get_bahan().length()); // menghitung panjang maksimum bahan
+            max_warna = max(max_warna, (int)aksesoris->get_warna().length()); // menghitung panjang maksimum warna
         }
 
         if (baju)
         {
-            max_ukuran = max(max_ukuran, (int)baju->get_ukuran().length());
+            max_ukuran = max(max_ukuran, (int)baju->get_ukuran().length()); // menghitung panjang maksimum ukuran
         }
     }
 
+    // mencetak header tabel
     cout << "+" << string(max_id + 2, '-') << "+"
          << string(max_nama + 2, '-') << "+"
          << string(max_harga + 2, '-') << "+"
@@ -50,6 +54,7 @@ void print_table(const vector<PetShop *> &produk)
          << string(max_ukuran + 2, '-') << "+"
          << endl;
 
+    // mencetak judul kolom
     cout << "| " << left << setw(max_id) << "ID"
          << " | " << setw(max_nama) << "Nama Produk"
          << " | " << setw(max_harga) << "Harga"
@@ -60,6 +65,7 @@ void print_table(const vector<PetShop *> &produk)
          << " | " << setw(max_ukuran) << "Ukuran"
          << " |" << endl;
 
+    // mencetak garis pemisah
     cout << "+" << string(max_id + 2, '-') << "+"
          << string(max_nama + 2, '-') << "+"
          << string(max_harga + 2, '-') << "+"
@@ -70,12 +76,14 @@ void print_table(const vector<PetShop *> &produk)
          << string(max_ukuran + 2, '-') << "+"
          << endl;
 
+    // loop untuk mencetak setiap baris produk
     for (size_t i = 0; i < produk.size(); ++i)
     {
-        PetShop *item = produk[i];
-        const Aksesoris *aksesoris = dynamic_cast<const Aksesoris *>(item);
-        const Baju *baju = dynamic_cast<const Baju *>(item);
+        PetShop *item = produk[i]; // mengambil item produk
+        const Aksesoris *aksesoris = dynamic_cast<const Aksesoris *>(item); // mencoba cast ke tipe Aksesoris
+        const Baju *baju = dynamic_cast<const Baju *>(item); // mencoba cast ke tipe Baju
 
+        // mencetak data produk
         cout << "| " << left << setw(max_id) << item->get_id()
              << " | " << setw(max_nama) << item->get_nama_produk()
              << " | " << setw(max_harga) << item->get_harga_produk()
@@ -105,6 +113,7 @@ void print_table(const vector<PetShop *> &produk)
         cout << " |" << endl;
     }
 
+    // mencetak garis pemisah akhir
     cout << "+" << string(max_id + 2, '-') << "+"
          << string(max_nama + 2, '-') << "+"
          << string(max_harga + 2, '-') << "+"
@@ -116,23 +125,25 @@ void print_table(const vector<PetShop *> &produk)
          << endl;
 }
 
+// fungsi untuk mencari produk berdasarkan id
 PetShop *find_produk_by_id(const vector<PetShop *> &produk, int id)
 {
-    for (PetShop *item : produk)
+    for (PetShop *item : produk) // loop untuk setiap item produk
     {
-        if (item->get_id() == id)
+        if (item->get_id() == id) // jika id produk sama dengan id yang dicari
         {
-            return item;
+            return item; // mengembalikan produk yang ditemukan
         }
     }
-    return nullptr;
+    return nullptr; // mengembalikan nullptr jika produk tidak ditemukan
 }
 
 int main()
 {
-    vector<PetShop *> produk;
-    int choice;
+    vector<PetShop *> produk; // deklarasi vector untuk menyimpan produk
+    int choice; // deklarasi variabel untuk menyimpan pilihan menu
 
+    // menambahkan beberapa produk ke dalam vector
     produk.push_back(new Baju(1, "Baju Anjing", 50000, 10, "Baju", "Katun", "Merah", "M"));
     produk.push_back(new Baju(2, "Baju Kucing", 45000, 15, "Baju", "Wol", "Biru", "S"));
     produk.push_back(new Aksesoris(3, "Kalung Anjing", 30000, 20, "Aksesoris", "Kulit", "Hitam"));
@@ -141,34 +152,35 @@ int main()
 
     do
     {
+        // menampilkan menu
         cout << "\nMenu:\n";
         cout << "1. Tambah Produk\n";
         cout << "2. Tampilkan Produk\n";
         cout << "3. Keluar\n";
         cout << "Pilih opsi: ";
-        while (!(cin >> choice))
+        while (!(cin >> choice)) // validasi input pilihan menu
         {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Input tidak valid. Silakan masukkan angka: ";
         }
 
-        switch (choice)
+        switch (choice) // switch case untuk menangani pilihan menu
         {
         case 1:
         {
-            int id, harga, stok;
+            int id, harga, stok; // deklarasi variabel untuk menyimpan input produk
             string nama, kategori, bahan, warna, ukuran;
 
             cout << "Masukkan ID: ";
-            while (!(cin >> id))
+            while (!(cin >> id)) // validasi input id
             {
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 cout << "Input tidak valid. Silakan masukkan angka: ";
             }
 
-            if (find_produk_by_id(produk, id) != nullptr)
+            if (find_produk_by_id(produk, id) != nullptr) // cek apakah id sudah ada
             {
                 cout << "ID sudah ada. Silakan masukkan ID yang berbeda.\n";
                 break;
@@ -176,10 +188,10 @@ int main()
 
             cout << "Masukkan Nama Produk: ";
             cin.ignore();
-            getline(cin, nama);
+            getline(cin, nama); // input nama produk
 
             cout << "Masukkan Harga Produk: ";
-            while (!(cin >> harga))
+            while (!(cin >> harga)) // validasi input harga
             {
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -187,7 +199,7 @@ int main()
             }
 
             cout << "Masukkan Stok Produk: ";
-            while (!(cin >> stok))
+            while (!(cin >> stok)) // validasi input stok
             {
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -196,49 +208,49 @@ int main()
 
             cout << "Masukkan Kategori Produk: ";
             cin.ignore();
-            getline(cin, kategori);
+            getline(cin, kategori); // input kategori produk
 
-            if (kategori == "Baju")
+            if (kategori == "Baju") // jika kategori adalah Baju
             {
                 cout << "Masukkan Bahan: ";
-                getline(cin, bahan);
+                getline(cin, bahan); // input bahan
                 cout << "Masukkan Warna: ";
-                getline(cin, warna);
+                getline(cin, warna); // input warna
                 cout << "Masukkan Ukuran: ";
-                getline(cin, ukuran);
-                produk.push_back(new Baju(id, nama, harga, stok, kategori, bahan, warna, ukuran));
+                getline(cin, ukuran); // input ukuran
+                produk.push_back(new Baju(id, nama, harga, stok, kategori, bahan, warna, ukuran)); // menambahkan produk Baju ke vector
             }
-            else if (kategori == "Aksesoris")
+            else if (kategori == "Aksesoris") // jika kategori adalah Aksesoris
             {
                 cout << "Masukkan Bahan: ";
-                getline(cin, bahan);
+                getline(cin, bahan); // input bahan
                 cout << "Masukkan Warna: ";
-                getline(cin, warna);
-                produk.push_back(new Aksesoris(id, nama, harga, stok, kategori, bahan, warna));
+                getline(cin, warna); // input warna
+                produk.push_back(new Aksesoris(id, nama, harga, stok, kategori, bahan, warna)); // menambahkan produk Aksesoris ke vector
             }
-            else
+            else // jika kategori adalah selain Baju dan Aksesoris
             {
-                produk.push_back(new PetShop(id, nama, harga, stok, kategori));
+                produk.push_back(new PetShop(id, nama, harga, stok, kategori)); // menambahkan produk PetShop ke vector
             }
             cout << "Produk berhasil ditambahkan.\n";
             break;
         }
         case 2:
-            print_table(produk);
+            print_table(produk); // memanggil fungsi untuk mencetak tabel produk
             break;
         case 3:
-            cout << "Keluar dari program.\n";
+            cout << "Keluar dari program.\n"; // keluar dari program
             break;
         default:
-            cout << "Opsi tidak valid. Silakan coba lagi.\n";
+            cout << "Opsi tidak valid. Silakan coba lagi.\n"; // pesan jika opsi tidak valid
             break;
         }
-    } while (choice != 3);
+    } while (choice != 3); // loop sampai pilihan adalah keluar
 
-    for (size_t i = 0; i < produk.size(); ++i)
+    for (size_t i = 0; i < produk.size(); ++i) // loop untuk menghapus semua produk dari memori
     {
         delete produk[i];
     }
 
-    return 0;
+    return 0; // mengembalikan nilai 0
 }

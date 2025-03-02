@@ -1,5 +1,4 @@
 // Aksesoris
-1
 15
 Gelang Anjing
 75000
@@ -16,7 +15,6 @@ Aksesoris
 Kulit
 Merah
 
-1
 7
 Gelang Anjing
 30000
@@ -26,7 +24,6 @@ Karet
 Biru
 
 // Baju
-1
 6
 Baju Anjing
 55000
@@ -36,7 +33,6 @@ Katun
 Biru
 L
 
-1
 6
 Baju Kucing
 45000

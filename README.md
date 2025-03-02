@@ -18,6 +18,8 @@ Saya Fariz Wibisono dengan NIM 2307589 mengerjakan Tugas Praktikum 2 dalam mata 
 
 #### Kompilasi
 
+---
+
 Berikut adalah cara untuk mengkompilasi dan menjalankan kode di setiap bahasa pemrograman yang digunakan dalam proyek ini:
 
 1. ![C++ Icon](https://img.icons8.com/color/24/000000/c-plus-plus-logo.png) **C++**

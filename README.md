@@ -20,27 +20,28 @@ Saya Fariz Wibisono dengan NIM 2307589 mengerjakan Tugas Praktikum 2 dalam mata 
 
 Berikut adalah cara untuk mengkompilasi dan menjalankan kode di setiap bahasa pemrograman yang digunakan dalam proyek ini:
 
-1. **C++**
+1. ![C++ Icon](https://img.icons8.com/color/24/000000/c-plus-plus-logo.png) **C++**
 
    ```sh
    g++ -o main main.cpp
    ./main
    ```
 
-2. **Java**
+2. ![Java Icon](https://img.icons8.com/color/24/000000/java-coffee-cup-logo.png) **Java**
 
    ```sh
    javac Main.java
    java Main
    ```
 
-3. **PHP**
+3. ![PHP Icon](https://img.icons8.com/officel/20/000000/php-logo.png) **PHP**
 
    ```sh
    php -S localhost:8000 -t .
    ```
 
-4. **Python**
+4. ![Python Icon](https://img.icons8.com/color/24/000000/python.png) **Python**
+
    ```sh
    python main.py
    ```

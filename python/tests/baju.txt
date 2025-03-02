@@ -1,9 +1,0 @@
-1
-6
-Baju Anjing
-55000
-15
-Baju
-Katun
-Biru
-L

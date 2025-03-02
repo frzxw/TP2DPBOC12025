@@ -1,0 +1,81 @@
+// Aksesoris
+1
+15
+Gelang Anjing
+75000
+30
+Aksesoris
+Logam
+Biru
+
+10
+Kalung Kucing
+50000
+20
+Aksesoris
+Kulit
+Merah
+
+1
+7
+Gelang Anjing
+30000
+15
+Aksesoris
+Karet
+Biru
+
+// Baju
+1
+6
+Baju Anjing
+55000
+15
+Baju
+Katun
+Biru
+L
+
+1
+6
+Baju Kucing
+45000
+10
+Baju
+Sutra
+Merah
+M
+
+
+6
+Baju Kucing
+75000
+10
+Baju
+Wol
+Merah
+M
+
+// Produk
+3
+10
+Makanan Kucing
+90000
+25
+Makanan
+5
+
+15
+Makanan Anjing
+120000
+30
+Makanan
+10
+
+2
+8
+Makanan Anjing
+85000
+30
+Makanan
+3

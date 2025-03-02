@@ -1,7 +1,0 @@
-2
-8
-Makanan Anjing
-85000
-30
-Makanan
-3

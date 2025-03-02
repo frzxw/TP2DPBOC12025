@@ -1,7 +1,0 @@
-1
-8
-Makanan Kucing
-75000
-20
-Makanan
-2

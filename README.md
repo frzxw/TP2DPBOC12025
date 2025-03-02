@@ -16,7 +16,40 @@ Saya Fariz Wibisono dengan NIM 2307589 mengerjakan Tugas Praktikum 2 dalam mata 
 
 ---
 
+#### Kompilasi
+
+Berikut adalah cara untuk mengkompilasi dan menjalankan kode di setiap bahasa pemrograman yang digunakan dalam proyek ini:
+
+1. **C++**
+
+   ```sh
+   g++ -o main main.cpp
+   ./main
+   ```
+
+2. **Java**
+
+   ```sh
+   javac Main.java
+   java Main
+   ```
+
+3. **PHP**
+
+   ```sh
+   php -S localhost:8000 -t .
+   ```
+
+4. **Python**
+   ```sh
+   python main.py
+   ```
+
+Pastikan Anda berada di direktori yang benar sebelum menjalankan perintah di atas.
+
 #### Diagram Kelas
+
+---
 
 Berikut adalah diagram kelas yang menggambarkan struktur dan hubungan antar kelas dalam proyek ini:
 
